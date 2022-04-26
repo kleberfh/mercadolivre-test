@@ -44,6 +44,7 @@ router.get('/', function(req, res, next) {
               "decimals": getItemDecimals(price),
               "currency": get(item, 'currency_id', null)
             },
+            "seller_state": get(item, 'seller_address.state.name', null),
             "picture": get(item, 'thumbnail', null),
             "condition": getItemCondition(attributes),
             "free_shipping": get(item, 'shipping.free_shipping', false),

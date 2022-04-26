@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import {Routes, Route} from 'react-router-dom';
 import Home from "../screens/Home";
 import Results from "../screens/Results";
+import Details from "../screens/Details";
 
 const Router = () => {
   return (
@@ -10,7 +11,8 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path='/items' element={<Results />}/>
-        <Route exact path='/' element={<Home />}/>
+        {/*<Route path='/items/:id' element={<Details />}/>*/}
+        <Route path='/' element={<Home />}/>
       </Routes>
     </div>
   );

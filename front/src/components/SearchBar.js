@@ -1,24 +1,22 @@
 import React, {useState} from 'react';
 import { BsSearch } from "react-icons/bs";
-import {searchItems} from "../services/api";
+import { useNavigate } from 'react-router-dom';
 import '../styles/SearchBar.css';
-import {useSetRecoilState} from "recoil";
-import {productsState} from "../Recoil/Atoms/products";
-import {get} from "lodash";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
+
   const [query, setQuery] = useState('');
-  const setProducts = useSetRecoilState(productsState);
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (query !== '') {
-      searchItems(query)
-        .then(response => {
-          setProducts(get(response, 'items', []));
-        })
+      navigate({
+        pathname: '/items',
+        search: `?search=${encodeURI(query)}`,
+      });
     }
-  }
+  };
 
   return (
     <form
