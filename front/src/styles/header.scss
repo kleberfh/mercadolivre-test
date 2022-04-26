@@ -1,0 +1,43 @@
+$logo: url('../assets/images/logo__small@2x.png');
+
+$breakpoint-tablet: 768px;
+
+.Header {
+  width: 100%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: #fff159;
+}
+
+.Header .Content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Logo {
+  width: 4em;
+  height: 3em;
+  margin-right: 32px;
+  background-image: $logo;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .Header .Content {
+    width: auto;
+    padding: 6px;
+    justify-content: space-around;
+  }
+
+  .Logo {
+    height: 2em;
+    width: 3.5em;
+    margin-left: 6px;
+    margin-right: 12px;
+  }
+}

@@ -3,6 +3,7 @@ const router = express.Router();
 const get = require('lodash/get');
 const map = require('lodash/map');
 const find = require('lodash/find');
+const slice = require('lodash/slice');
 const {
   getAuthor,
   getItemDecimals,
@@ -26,7 +27,7 @@ router.get('/', function(req, res, next) {
         const categoriesValues = map(get(categories, 'values', []), 'name');
 
         // Construct each item in result items
-        const items = get(data, 'results', []).map(item => {
+        const items = slice(get(data, 'results', []), 0, 4).map(item => {
 
           // Get item attributes
           const attributes = get(item, 'attributes', []);
