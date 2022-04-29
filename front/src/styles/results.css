@@ -8,4 +8,11 @@
   background-color: #fff;
 }
 
+@media (max-width: 768px) {
+  .Results {
+    width: auto;
+    margin-top: 24px;
+  }
+}
+
 /*# sourceMappingURL=results.css.map */

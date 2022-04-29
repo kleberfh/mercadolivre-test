@@ -10,9 +10,9 @@ const Router = () => {
     <div className='Router'>
       <Header />
       <Routes>
-        <Route path='/items' element={<Results />}/>
-        {/*<Route path='/items/:id' element={<Details />}/>*/}
         <Route path='/' element={<Home />}/>
+        <Route path='/items' element={<Results />}/>
+        <Route path='/items/:id' element={<Details />}/>
       </Routes>
     </div>
   );

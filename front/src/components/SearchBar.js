@@ -25,7 +25,7 @@ const SearchBar = () => {
     >
       <input
         className='search'
-        placeholder="Nunca deixa de buscar"
+        placeholder="Nunca dejes de buscar"
         onChange={e => setQuery(e.target.value)}
       />
       <button
@@ -33,7 +33,7 @@ const SearchBar = () => {
         onClick={handleSearch}
       >
         <BsSearch
-          color='#2c2c2c'
+          color='#4f5151'
           className='icon'
         />
       </button>

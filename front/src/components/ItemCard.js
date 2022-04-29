@@ -1,12 +1,12 @@
 import React from 'react';
 import {get} from "lodash";
-import '../styles/ItemCard.css';
+import { MdOutlineLocalShipping } from 'react-icons/md';
 import {convertIntToMoney} from "../utilities/utilities";
 
-const ItemCard = ({ item }) => {
-  console.log(item);
+import '../styles/ItemCard.css';
 
-  const price = get(item, 'price', '');
+const ItemCard = ({ item }) => {
+
   const amount = get(item, 'price.amount', '');
   const decimals = get(item, 'price.decimals', 0);
 
@@ -19,15 +19,20 @@ const ItemCard = ({ item }) => {
   }
 
   return (
-    <div className='ItemCard'>
+    <div className='ItemCard' onClick={() => console.log('Open item', item.id)}>
       <img
         className='ItemPicture'
         src={get(item, 'picture', '')}
       />
       <div className="ItemDetails">
-        <p className="ItemPrice">
+        <span className="ItemPrice">
           {convertIntToMoney(fixPriceCents(), get(item, 'price.currency', 'BRL'))}
-        </p>
+          {item.free_shipping && (
+            <div className='ItemFreeShipping'>
+              <MdOutlineLocalShipping size={10} color='#1d1d1d' />
+            </div>
+          )}
+        </span>
         <p className="ItemTitle">
           {get(item, 'title', '')}
         </p>
