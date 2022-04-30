@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
 import {get} from "lodash";
 import {getItem} from "../services/api";
+import {useParams} from "react-router-dom";
 import Loading from "../components/Loading";
+import {convertIntToMoney, getProductImage} from "../utilities/utilities";
+
+import '../styles/details.css';
 
 const Details = () => {
   const params = useParams();
@@ -14,10 +17,33 @@ const Details = () => {
   const getProduct = () => {
     getItem(id)
       .then(response => {
-        console.log(response.item);
         setProduct(get(response, 'item', null));
         setLoading(false);
       })
+  }
+
+  const fixedProductPrice = () => {
+    const amount = get(product, 'price.amount', '');
+    const decimals = get(product, 'price.decimals', 0);
+
+    let fixedAmount = amount;
+
+    if (decimals === 0) {
+      fixedAmount = Number(amount + '00')
+    }
+
+    const formatedPrice = convertIntToMoney(
+      fixedAmount
+        .toString()
+        .replace('.', ''),
+      get(product, 'price.currency', 'BRL')
+    )
+    .split(',');
+
+    return {
+      price: formatedPrice[0],
+      decimals: formatedPrice[1]
+    }
   }
 
   useEffect(() => {
@@ -35,25 +61,35 @@ const Details = () => {
   return (
     <div className='DetailContainer'>
       <div className='Product'>
-        <img src={product.picture} className='ProductImage' />
+        <img
+          className='ProductImage'
+          src={getProductImage(get(product, 'thumbnail_id', null), get(product, 'picture', ''))}
+        />
         <div className='ProductInfoContainer'>
-          <span className='ProductConditionSales'>
-            {`${product.condition} - ${product.sold_quantity} vendidos`}
-          </span>
+          {product.sold_quantity >= 1 && (
+            <span className='ProductConditionSales'>
+              {`${product.condition} - ${product.sold_quantity} vendidos`}
+            </span>
+          )}
           <span className='ProductTitle'>
             {product.title}
           </span>
           <div className='ProductPriceContainer'>
-            <span className='ProductPriceContainer'>
-              $ {(get(product, 'price.amount', null)).toString().split('.')[0]}
+            <span className='ProductPrice'>
+              {fixedProductPrice().price}
             </span>
             <span className='ProductPriceDecimals'>
-              {get(product, 'price.decimals', null)}
+              {fixedProductPrice().decimals}
             </span>
           </div>
-          <button className='ProductPurchaseButton'>
+          <a
+            target='_blank'
+            rel='noreferrer noopener'
+            className='ProductPurchaseButton'
+            href={get(product, 'link', '')}
+          >
             Comprar
-          </button>
+          </a>
         </div>
       </div>
       <div className='DescriptionContainer'>

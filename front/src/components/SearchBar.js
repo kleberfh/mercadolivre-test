@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { BsSearch } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
-import '../styles/SearchBar.css';
+import '../styles/searchBar.css';
 
 const SearchBar = () => {
   const navigate = useNavigate();
@@ -37,6 +37,9 @@ const SearchBar = () => {
           className='icon'
         />
       </button>
+      {/*<div className='bests_results'>*/}
+      {/*  Resultados*/}
+      {/*</div>*/}
     </form>
   )
 };

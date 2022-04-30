@@ -1,11 +1,13 @@
 import React from "react";
 
+import '../styles/home.css';
+
 const Home = () => {
   return (
-    <div>
-      <h1>
-        Bem vindo
-      </h1>
+    <div className="home">
+      <p className='welcome'>
+        Bienvenido!
+      </p>
     </div>
   )
 }

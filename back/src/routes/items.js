@@ -45,6 +45,7 @@ router.get('/', function(req, res, next) {
               "currency": get(item, 'currency_id', null)
             },
             "seller_state": get(item, 'seller_address.state.name', null),
+            "thumbnail_id": get(item, 'thumbnail_id', null),
             "picture": get(item, 'thumbnail', null),
             "condition": getItemCondition(attributes),
             "free_shipping": get(item, 'shipping.free_shipping', false),
@@ -88,7 +89,9 @@ router.get('/:id', async function(req, res, next) {
           "amount": price,
           "decimals": getItemDecimals(price)
         },
+        "link": get(item, 'permalink', ''),
         "picture": get(item, 'secure_thumbnail', null),
+        "thumbnail_id": get(item, 'thumbnail_id', null),
         "condition": getItemCondition(get(item, 'attributes', null)),
         "free_shipping": get(item, 'shipping.free_shipping', false),
         "sold_quantity": get(item, 'sold_quantity', null),
