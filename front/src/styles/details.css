@@ -1,6 +1,6 @@
 .DetailContainer {
   width: 80%;
-  margin: 24px auto auto;
+  margin: 24px auto 32px;
   color: #4f5151;
   border-radius: 4px;
   background-color: #FFF;
@@ -68,16 +68,58 @@
   display: flex;
   flex-direction: column;
   padding: 24px;
-  margin-top: 32px;
 }
 .DetailContainer .DescriptionContainer .DescriptionTitle {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 24px;
 }
 .DetailContainer .DescriptionContainer .DescriptionContent {
   color: #989898;
-  font-size: 12px;
+  font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  .DetailContainer {
+    width: 95%;
+  }
+  .DetailContainer .Product {
+    padding-top: 0;
+    flex-direction: column;
+  }
+  .DetailContainer .Product .ProductImage {
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+  }
+  .DetailContainer .Product .ProductInfoContainer {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: 16px;
+  }
+  .DetailContainer .Product .ProductInfoContainer .ProductConditionSales {
+    font-size: 12px;
+  }
+  .DetailContainer .Product .ProductInfoContainer .ProductTitle {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+  .DetailContainer .Product .ProductInfoContainer .ProductPriceContainer {
+    margin-top: 16px;
+  }
+  .DetailContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPrice {
+    font-size: 28px;
+  }
+  .DetailContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPriceDecimals {
+    font-size: 16px;
+  }
+  .DetailContainer .DescriptionContainer .DescriptionTitle {
+    font-size: 18px;
+  }
+  .DetailContainer .DescriptionContainer .DescriptionContent {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=details.css.map */

@@ -1,8 +1,9 @@
 $buttonColor: #3383fb;
+$breakpoint-lg: 992px;
 
 .DetailContainer {
   width: 80%;
-  margin: 24px auto auto;
+  margin: 24px auto 32px;
 
   color: #4f5151;
 
@@ -91,10 +92,9 @@ $buttonColor: #3383fb;
     flex-direction: column;
 
     padding: 24px;
-    margin-top: 32px;
 
     .DescriptionTitle {
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 500;
 
       margin-bottom: 24px;
@@ -102,7 +102,63 @@ $buttonColor: #3383fb;
 
     .DescriptionContent {
       color: #989898;
-      font-size: 12px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .DetailContainer {
+    width: 95%;
+
+    .Product {
+      padding-top: 0;
+      flex-direction: column;
+
+      .ProductImage {
+        width: 100%;
+        height: auto;
+
+        margin-right: auto;
+      }
+
+      .ProductInfoContainer {
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        margin-top: 16px;
+
+        .ProductConditionSales {
+          font-size: 12px;
+        }
+
+        .ProductTitle {
+          font-size: 16px;
+          margin-top: 12px;
+        }
+
+        .ProductPriceContainer {
+          margin-top: 16px;
+
+          .ProductPrice {
+            font-size: 28px;
+          }
+
+          .ProductPriceDecimals {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .DescriptionContainer {
+      .DescriptionTitle {
+        font-size: 18px;
+      }
+
+      .DescriptionContent {
+        font-size: 14px;
+      }
     }
   }
 }

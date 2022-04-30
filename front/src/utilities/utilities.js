@@ -1,7 +1,7 @@
 import {get} from "lodash";
 
 export const convertIntToMoney = (value, currency) =>
-  new Intl.NumberFormat('pt-BR', {
+  new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: currency,
   }).format(value / 100);

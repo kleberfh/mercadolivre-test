@@ -40,7 +40,7 @@ const Results = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className='Results'>
+    <div className='Results' data-testid="results">
       <div className='items'>
         {products.map((item, index) => <ItemCard key={index.toString()} item={item}/>)}
       </div>

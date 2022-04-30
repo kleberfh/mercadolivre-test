@@ -31,6 +31,7 @@ const SearchBar = () => {
       <button
         className='button'
         onClick={handleSearch}
+        data-testid="search_button"
       >
         <BsSearch
           color='#4f5151'
