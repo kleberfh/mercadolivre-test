@@ -3,6 +3,7 @@ const router = express.Router();
 const get = require('lodash/get');
 const map = require('lodash/map');
 const find = require('lodash/find');
+const first = require('lodash/first');
 const slice = require('lodash/slice');
 const {
   getAuthor,
@@ -12,7 +13,7 @@ const {
 const {
   getItem,
   searchItems,
-  getItemDescription
+  getItemDescription, getItemCategories
 } = require("../services/mercadolibre");
 
 router.get('/', function(req, res, next) {
@@ -23,8 +24,9 @@ router.get('/', function(req, res, next) {
     searchItems(query)
       .then(({ data }) => {
         // Get and filter all categories values
-        const categories = find(get(data, 'available_filters', null), ['id', 'category']);
-        const categoriesValues = map(get(categories, 'values', []), 'name');
+        const categories = find(get(data, 'filters', null), ['id', 'category']);
+        const category = first(get(categories, 'values', []));
+        const categoriesValues = map(get(category, 'path_from_root', []), 'name');
 
         // Construct each item in result items
         const items = slice(get(data, 'results', []), 0, 4).map(item => {
@@ -72,6 +74,8 @@ router.get('/:id', async function(req, res, next) {
     // Fetch item from api
     const item = get(await getItem(id), 'data', null);
 
+    const categories = get(await getItemCategories(get(item, 'category_id', '')), 'data', null);
+
     // Fetch item description from api
     const description = get(await getItemDescription(id), 'data', null);
 
@@ -89,6 +93,7 @@ router.get('/:id', async function(req, res, next) {
           "amount": price,
           "decimals": getItemDecimals(price)
         },
+        "categories": map(get(categories, 'path_from_root', []), 'name'),
         "link": get(item, 'permalink', ''),
         "picture": get(item, 'secure_thumbnail', null),
         "thumbnail_id": get(item, 'thumbnail_id', null),
