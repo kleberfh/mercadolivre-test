@@ -1,4 +1,5 @@
 import axios from "axios";
+import {toast} from "react-toastify";
 
 const instance = axios.create({
   baseURL: 'http://localhost:3001/api/'
@@ -7,7 +8,9 @@ const instance = axios.create({
 instance.interceptors.response.use(
   ({ data }) => data,
   async (error) => {
-    // TODO - Handle errors
+    toast.error('Ocorreu um erro ao buscar, por favor, tente novamente mais tarde.', {
+      position: toast.POSITION.TOP_CENTER
+    });
     return Promise.reject(error);
   }
 );

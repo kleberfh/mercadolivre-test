@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Backend Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project made with React and SASS.
 
-## Available Scripts
+It's main porpuse is to connect with the backend procjet and give a Mercado Libre experience to users.
 
-In the project directory, you can run:
+## Install
 
-### `npm start`
+Use the package manager [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) to install project dependencies.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm i
+```
+or
+```bash
+yarn install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Run
 
-### `npm test`
+After installing all project dependencies, you need to start the api server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For this, you could simple run:
 
-### `npm run build`
+With npm
+```bash
+npm start
+```
+Or with yarn
+```bash
+yarn start
+```
+## Tests
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project has test in search bar component.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For test it you could simple run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+With npm
+```bash
+npm test
+```
+Or with yarn
+```bash
+yarn test
+```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This is a simple app with 3 different pages, all these 3 pages have 
+the search bar for user to search any product at any moment.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Home
+The first one is just a welcome screen with the search bar and can be found in ' / ' route.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Search
+The second one is the results screen, this page shows the first
+4 Mercado Libre API results for the searched product, you can 
+access this page directly passing the product name in the address bar as a 'search' query.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Example:
+```
+/items?search=iphone
+```
+### Details
 
-## Learn More
+The third one is the product details, this page shows the product name, with the price and description.
+It can be accessible in the results page by clicking in one product or passing the product id to the address bar.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Example:
+```
+/items/MLA1130313467
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Developer
+**This project was developed by [Kleber Fernando](https://www.linkedin.com/in/kleber-fernando/) as a test for Mercado Libre.**

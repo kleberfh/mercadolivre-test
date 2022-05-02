@@ -209,4 +209,4 @@ Here you should see every object returned in all routes on this api with field d
 ```
 
 ## Developer
-**This project was develop by [Kleber Fernando](https://www.linkedin.com/in/kleber-fernando/) as a test for Mercado Libre.**
+**This project was developed by [Kleber Fernando](https://www.linkedin.com/in/kleber-fernando/) as a test for Mercado Libre.**

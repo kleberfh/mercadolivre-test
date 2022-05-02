@@ -1,5 +1,3 @@
-import {get} from "lodash";
-
 export const convertIntToMoney = (value, currency) =>
   new Intl.NumberFormat('es-AR', {
     style: 'currency',

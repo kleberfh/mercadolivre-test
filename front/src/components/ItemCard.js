@@ -26,6 +26,7 @@ const ItemCard = ({ item }) => {
   return (
     <div className='ItemCard' onClick={handleItemSelect}>
       <img
+        alt={item.title}
         className='ItemPicture'
         src={getProductImage(get(item, 'thumbnail_id', null), get(item, 'picture', ''))}
       />
