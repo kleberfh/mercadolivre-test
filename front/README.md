@@ -17,10 +17,13 @@ yarn install
 ```
 
 ## Run
+After installing all project dependencies, 
+you need to configure your .env with the backend
+project url (the backend project needs to be running), for this, you can simply rename the .env.example file to .env.
 
-After installing all project dependencies, you need to start the api server.
+***If your backed project doesn't runs on localhost or you have changed the project port you need to change the URL in .env file and restart the project if it is running.***
 
-For this, you could simple run:
+To run this project:
 
 With npm
 ```bash

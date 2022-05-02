@@ -67,6 +67,7 @@ const Details = () => {
         <div className='Product'>
           <img
             className='ProductImage'
+            alt={get(product, 'title', 'product image')}
             src={getProductImage(get(product, 'thumbnail_id', null), get(product, 'picture', ''))}
           />
           <div className='ProductInfoContainer'>

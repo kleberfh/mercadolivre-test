@@ -44,7 +44,7 @@ You should see a list with available routes and their description bellow.
 
 ### List items
 
-`GET /items`
+`GET /api/items`
 
 #### Params:
 - q - This is the query for search in ML Api.
@@ -58,7 +58,7 @@ You should see a list with available routes and their description bellow.
 
 #### Example
 
-`GET /items?q=ipod`
+`GET /api/items?q=ipod`
 
 ### Response
     {
@@ -69,7 +69,7 @@ You should see a list with available routes and their description bellow.
 
 ### Get product details
 
-`GET /items/:id`
+`GET /api/items/:id`
 
 #### Params:
 - id - The id of the product you want in ML Api.
@@ -82,7 +82,7 @@ You should see a list with available routes and their description bellow.
 
 #### Example
 
-`GET /items/MLA935826998`
+`GET /api/items/MLA935826998`
 
 ### Response
 ```
