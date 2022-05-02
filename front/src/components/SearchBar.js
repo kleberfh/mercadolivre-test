@@ -38,9 +38,6 @@ const SearchBar = () => {
           className='icon'
         />
       </button>
-      {/*<div className='bests_results'>*/}
-      {/*  Resultados*/}
-      {/*</div>*/}
     </form>
   )
 };

@@ -1,18 +1,35 @@
+$breakpoint-xl: 1280px;
 $breakpoint-tablet: 768px;
 
-.Results {
+.Results .items {
   width: 80%;
-  margin-top: 24px;
+  margin-top: 12px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  border-radius: 4px;
   background-color: #fff;
 }
 
 @media (max-width: $breakpoint-tablet) {
   .Results {
-    width: auto;
-    margin-top: 24px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Results .items {
+    width: 100%;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .Results {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Results .items {
+    width: 100%;
   }
 }

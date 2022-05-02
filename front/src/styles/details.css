@@ -1,22 +1,28 @@
 .DetailContainer {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductContainer {
   width: 80%;
-  margin: 24px auto 32px;
   color: #4f5151;
+  margin: 12px auto 32px;
   border-radius: 4px;
   background-color: #FFF;
 }
-.DetailContainer .Product {
+.ProductContainer .Product {
   width: auto;
   padding: 24px;
   display: flex;
   flex-direction: row;
 }
-.DetailContainer .Product .ProductImage {
+.ProductContainer .Product .ProductImage {
   width: 50%;
   height: 50%;
   margin-right: 32px;
 }
-.DetailContainer .Product .ProductInfoContainer {
+.ProductContainer .Product .ProductInfoContainer {
   flex: 0.8;
   display: flex;
   flex-direction: column;
@@ -24,31 +30,31 @@
   margin-left: auto;
   padding-right: 32px;
 }
-.DetailContainer .Product .ProductInfoContainer .ProductConditionSales {
+.ProductContainer .Product .ProductInfoContainer .ProductConditionSales {
   font-size: 14px;
   font-weight: 500;
 }
-.DetailContainer .Product .ProductInfoContainer .ProductTitle {
+.ProductContainer .Product .ProductInfoContainer .ProductTitle {
   font-size: 18px;
   font-weight: 600;
   margin-top: 16px;
 }
-.DetailContainer .Product .ProductInfoContainer .ProductPriceContainer {
+.ProductContainer .Product .ProductInfoContainer .ProductPriceContainer {
   display: flex;
   flex-direction: row;
   margin-top: 24px;
 }
-.DetailContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPrice {
+.ProductContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPrice {
   font-size: 32px;
   font-weight: 500;
 }
-.DetailContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPriceDecimals {
+.ProductContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPriceDecimals {
   font-size: 16px;
   align-self: flex-start;
   margin-top: 4px;
   margin-left: 2px;
 }
-.DetailContainer .Product .ProductInfoContainer .ProductPurchaseButton {
+.ProductContainer .Product .ProductInfoContainer .ProductPurchaseButton {
   cursor: pointer;
   padding: 8px;
   margin-top: 32px;
@@ -61,20 +67,20 @@
   border: 1px solid #FFF;
   background-color: #3383fb;
 }
-.DetailContainer .Product .ProductInfoContainer .ProductPurchaseButton:hover {
+.ProductContainer .Product .ProductInfoContainer .ProductPurchaseButton:hover {
   background-color: #1a74fb;
 }
-.DetailContainer .DescriptionContainer {
+.ProductContainer .DescriptionContainer {
   display: flex;
   flex-direction: column;
   padding: 24px;
 }
-.DetailContainer .DescriptionContainer .DescriptionTitle {
+.ProductContainer .DescriptionContainer .DescriptionTitle {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 24px;
 }
-.DetailContainer .DescriptionContainer .DescriptionContent {
+.ProductContainer .DescriptionContainer .DescriptionContent {
   color: #989898;
   font-size: 16px;
 }
@@ -83,42 +89,55 @@
   .DetailContainer {
     width: 95%;
   }
-  .DetailContainer .Product {
+
+  .ProductContainer {
+    width: 100%;
+  }
+  .ProductContainer .Product {
     padding-top: 0;
     flex-direction: column;
   }
-  .DetailContainer .Product .ProductImage {
+  .ProductContainer .Product .ProductImage {
     width: 100%;
     height: auto;
     margin-right: auto;
   }
-  .DetailContainer .Product .ProductInfoContainer {
+  .ProductContainer .Product .ProductInfoContainer {
     margin-left: 0;
     margin-right: 0;
     padding-right: 0;
     margin-top: 16px;
   }
-  .DetailContainer .Product .ProductInfoContainer .ProductConditionSales {
+  .ProductContainer .Product .ProductInfoContainer .ProductConditionSales {
     font-size: 12px;
   }
-  .DetailContainer .Product .ProductInfoContainer .ProductTitle {
+  .ProductContainer .Product .ProductInfoContainer .ProductTitle {
     font-size: 16px;
     margin-top: 12px;
   }
-  .DetailContainer .Product .ProductInfoContainer .ProductPriceContainer {
+  .ProductContainer .Product .ProductInfoContainer .ProductPriceContainer {
     margin-top: 16px;
   }
-  .DetailContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPrice {
+  .ProductContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPrice {
     font-size: 28px;
   }
-  .DetailContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPriceDecimals {
+  .ProductContainer .Product .ProductInfoContainer .ProductPriceContainer .ProductPriceDecimals {
     font-size: 16px;
   }
-  .DetailContainer .DescriptionContainer .DescriptionTitle {
+  .ProductContainer .DescriptionContainer .DescriptionTitle {
     font-size: 18px;
   }
-  .DetailContainer .DescriptionContainer .DescriptionContent {
+  .ProductContainer .DescriptionContainer .DescriptionContent {
     font-size: 14px;
+  }
+}
+@media (min-width: 1280px) {
+  .DetailContainer {
+    width: 70%;
+  }
+
+  .ProductContainer {
+    width: 100%;
   }
 }
 

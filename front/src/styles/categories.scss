@@ -1,0 +1,50 @@
+$breakpoint-xl: 1280px;
+$breakpoint-tablet: 768px;
+
+.Categories {
+  width: 80%;
+  margin: 12px auto auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: #989898;
+  font-size: 14px;
+  font-weight: 400;
+
+  .Category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .CategoryIcon {
+      margin-right: 4px;
+    }
+  }
+
+  .Category:first-child {
+    margin-right: 4px;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .Categories {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+    font-size: 12px;
+    .Category {
+      .CategoryIcon {
+
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .Categories {
+    width: 100%;
+  }
+}

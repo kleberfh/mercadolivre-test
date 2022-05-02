@@ -6,6 +6,7 @@ import Loading from "../components/Loading";
 import {convertIntToMoney, getProductImage} from "../utilities/utilities";
 
 import '../styles/details.css';
+import Categories from "../components/Categories";
 
 const Details = () => {
   const params = useParams();
@@ -47,8 +48,9 @@ const Details = () => {
   }
 
   useEffect(() => {
+    setLoading(true);
     setId(get(params, 'id', ''))
-  }, [])
+  }, [params])
 
   useEffect(() => {
     if (id && id !== '') {
@@ -60,45 +62,48 @@ const Details = () => {
 
   return (
     <div className='DetailContainer'>
-      <div className='Product'>
-        <img
-          className='ProductImage'
-          src={getProductImage(get(product, 'thumbnail_id', null), get(product, 'picture', ''))}
-        />
-        <div className='ProductInfoContainer'>
-          {product.sold_quantity >= 1 && (
-            <span className='ProductConditionSales'>
+      <Categories categories={get(product, 'categories', '')} />
+      <div className='ProductContainer'>
+        <div className='Product'>
+          <img
+            className='ProductImage'
+            src={getProductImage(get(product, 'thumbnail_id', null), get(product, 'picture', ''))}
+          />
+          <div className='ProductInfoContainer'>
+            {product.sold_quantity >= 1 && (
+              <span className='ProductConditionSales'>
               {`${product.condition} - ${product.sold_quantity} vendidos`}
             </span>
-          )}
-          <span className='ProductTitle'>
+            )}
+            <span className='ProductTitle'>
             {product.title}
           </span>
-          <div className='ProductPriceContainer'>
+            <div className='ProductPriceContainer'>
             <span className='ProductPrice'>
               {fixedProductPrice().price}
             </span>
-            <span className='ProductPriceDecimals'>
+              <span className='ProductPriceDecimals'>
               {fixedProductPrice().decimals}
             </span>
+            </div>
+            <a
+              target='_blank'
+              rel='noreferrer noopener'
+              className='ProductPurchaseButton'
+              href={get(product, 'link', '')}
+            >
+              Comprar
+            </a>
           </div>
-          <a
-            target='_blank'
-            rel='noreferrer noopener'
-            className='ProductPurchaseButton'
-            href={get(product, 'link', '')}
-          >
-            Comprar
-          </a>
         </div>
-      </div>
-      <div className='DescriptionContainer'>
+        <div className='DescriptionContainer'>
         <span className='DescriptionTitle'>
           Descripción del producto
         </span>
-        <span className='DescriptionContent'>
+          <span className='DescriptionContent'>
           {product.description}
         </span>
+        </div>
       </div>
     </div>
   )

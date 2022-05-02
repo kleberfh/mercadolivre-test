@@ -1,6 +1,6 @@
 import App from '../app';
 import '@testing-library/jest-dom';
-import {fireEvent, getByTestId, render, screen} from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
 import {act} from "react-dom/test-utils";
 
 describe("Search bar component", () => {

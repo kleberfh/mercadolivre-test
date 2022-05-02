@@ -1,11 +1,19 @@
 $buttonColor: #3383fb;
 $breakpoint-lg: 992px;
+$breakpoint-xl: 1280px;
 
 .DetailContainer {
-  width: 80%;
-  margin: 24px auto 32px;
+  margin: auto;
 
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductContainer {
+  width: 80%;
   color: #4f5151;
+
+  margin: 12px auto 32px;
 
   border-radius: 4px;
   background-color: #FFF;
@@ -110,6 +118,9 @@ $breakpoint-lg: 992px;
 @media (max-width: $breakpoint-lg) {
   .DetailContainer {
     width: 95%;
+  }
+  .ProductContainer {
+    width: 100%;
 
     .Product {
       padding-top: 0;
@@ -160,5 +171,15 @@ $breakpoint-lg: 992px;
         font-size: 14px;
       }
     }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .DetailContainer {
+    width: 70%;
+  }
+
+  .ProductContainer {
+    width: 100%;
   }
 }
