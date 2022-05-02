@@ -1,6 +1,6 @@
 $buttonColor: #3383fb;
-$breakpoint-lg: 992px;
 $breakpoint-xl: 1280px;
+$breakpoint-tablet: 768px;
 
 .DetailContainer {
   margin: auto;
@@ -115,7 +115,7 @@ $breakpoint-xl: 1280px;
   }
 }
 
-@media (max-width: $breakpoint-lg) {
+@media (max-width: $breakpoint-tablet) {
   .DetailContainer {
     width: 95%;
   }

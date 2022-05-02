@@ -1,5 +1,6 @@
 $logo: url('../assets/images/logo__small@2x.png');
 
+$breakpoint-xl: 1280px;
 $breakpoint-tablet: 768px;
 
 .Header {
@@ -29,7 +30,7 @@ $breakpoint-tablet: 768px;
 
 @media (max-width: $breakpoint-tablet) {
   .Header .Content {
-    width: auto;
+    width: 95%;
     padding: 6px;
     justify-content: space-around;
   }
@@ -39,5 +40,11 @@ $breakpoint-tablet: 768px;
     width: 3.5em;
     margin-left: 6px;
     margin-right: 12px;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .Header .Content {
+    width: 70%;
   }
 }
