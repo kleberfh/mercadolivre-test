@@ -2,7 +2,7 @@
 
 Project made with React and SASS.
 
-It's main porpuse is to connect with the backend procjet and give a Mercado Libre experience to users.
+It's main porpuse is to connect with the backend project and give a Mercado Libre experience to users.
 
 ## Install
 
