@@ -1,4 +1,4 @@
-# Backend Project
+# Frontend Project
 
 Project made with React and SASS.
 
